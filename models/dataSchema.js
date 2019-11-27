@@ -9,7 +9,7 @@ const questionSchema = new Schema({
     timestamps: true
 })
 
-let Question = mongoose.model('question', questionSchema)
+let Question = mongoose.model('questions', questionSchema)
 
 // let newQuestion = Question({
 //  questionContent: 'Quynh xinh gai',

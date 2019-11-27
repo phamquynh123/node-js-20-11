@@ -26,13 +26,28 @@ const updateQuestion = function(id, QuestionContent) {
 		questionContent: QuestionContent,
 	}
 	console.log(updateQuestion)
-	dataSchema.findByIdAndUpdate(id, updateQuestion,(err,newData)=> {
+	let condition = {
+		_id: id
+	}
+	dataSchema.findByIdAndUpdate(condition, updateQuestion,(err,newData)=> {
 		if (err) {console.log(err)} else {
 			console.log(newData)
 		}
 	})
 }
 
+const deleteQuestion = function (id) {
+	// console.log('aa');
+	
+	dataSchema.findByIdAndDelete({_id:id}).then(
+		data=>{
+			console.log(data)
+		}).catch(
+		err=>{
+			console.log(err)
+		})
+}
+
 module.exports = {
-	CreateNewQuestion,showAllCallback,showAllPromise,updateQuestion
+	CreateNewQuestion,showAllCallback,showAllPromise,updateQuestion,deleteQuestion
 }

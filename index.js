@@ -19,7 +19,6 @@ app.set("view engine", "handlebars")
 app.engine("handlebars", handlebars({defaultLayout: "user"}));  //layout: file name
 
 // dataController.CreateNewQuestion("Quynh hoc mongo" , 'gioi vch')
-// dataController.updateQuestion('5dd4ca670e53101e10eea7e7', 'Quynhhoc mo')
 
 app.listen(3000, (err)=> {
     if(err) {
